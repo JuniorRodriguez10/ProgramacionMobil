@@ -1,0 +1,17 @@
+<ion-card >
+  
+  <ion-card-header >
+    <ion-card-title >{{store.title}}</ion-card-title>
+    <img src="{{store.image}}" class="photo"/>
+
+
+    
+    <div>
+      <p>{{ store.price }}</p>
+      <p>{{ store.rating.rate }} <ion-icon *ngFor="let calification of [].constructor(calification)" name="calification"></ion-icon> </p>
+    </div>
+
+  </ion-card-header>
+
+ 
+</ion-card>

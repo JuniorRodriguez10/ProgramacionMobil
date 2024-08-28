@@ -3,18 +3,35 @@
     <ion-title>
       Blank
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/shoppingcar']">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div>
+    <ion-select (ionChange)="onOptionSelected($event)" interface="action-sheet">
+      <ion-select label="Outline select" label-placement="floating" fill="outline">
+        <ion-select-option value="electronics">Electronics</ion-select-option>
+        <ion-select-option value="jewelery">Jewelery</ion-select-option>
+        <ion-select-option value="men's clothing">Men 's clothing</ion-select-option>
+        <ion-select-option value="women's clothing">Women 's clothing</ion-select-option>
+      </ion-select>
+
+
+  </ion-select>
+    <div class="part">
+
+      <app-card *ngFor="let save of save" [store]="save"></app-card>
+
+
+    </div>
   </div>
+
 </ion-content>
